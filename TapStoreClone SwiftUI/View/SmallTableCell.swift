@@ -16,7 +16,7 @@ struct SmallTableCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             SectionHeader(title: self.$title, subtitle: self.$subtitle)
-            ForEach(self.secStore.sections.filter { $0.id == self.sectionID }, id: \.id) {
+            ForEach(self.secStore.sections.filter { $0.id == self.sectionID }) {
                 section in
                 ForEach(section.items, id: \.id) { item in
                     HStack(spacing: 15) {

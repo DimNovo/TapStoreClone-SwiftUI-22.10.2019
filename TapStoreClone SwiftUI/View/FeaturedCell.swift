@@ -16,17 +16,17 @@ struct FeaturedCell: View {
             Divider()
                 .background(Color.primary)
             .padding(10)
-            ScrollView(.horizontal, showsIndicators: false) {
+            CustonScrollView {
                 HStack(alignment: .center) {
-                    ForEach(self.secStore.sections.filter { $0.id == self.sectionID }, id: \.id) {
+                    ForEach(self.secStore.sections.filter { $0.id == self.sectionID }) {
                         section in
                         ForEach(section.items, id: \.id) { item in
                             VStack(alignment: .leading, spacing: 5) {
-                                Text(item.tagline.uppercased())
+                                Text(item.tagline.localizedUppercase)
                                     .font(.system(size: 13))
                                 .bold()
                                     .foregroundColor(Color.init(.systemBlue))
-                                Text(item.name)
+                                Text(item.name.localizedCapitalized)
                                     .font(.system(size: 24))
                                 .bold()
                                     .foregroundColor(Color.init(.label))
@@ -37,8 +37,8 @@ struct FeaturedCell: View {
                                     .cornerRadius(10)
                             }
                         }
-                    }
-                }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
+                    }.padding(.horizontal, 5)
+                }
             }
         }
     }

@@ -17,8 +17,8 @@ class SectionStore: ObservableObject {
     }
     
     private func getAllSections() {
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             self.sections = Bundle.main.decode([Section].self, from: "appstore.json")
-        }
+//        }
     }
 }

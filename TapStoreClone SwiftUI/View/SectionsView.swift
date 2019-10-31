@@ -11,16 +11,36 @@ import SwiftUI
 struct SectionsView: View {
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: true) {
-                FeaturedCell(sectionID: 1)
-                MediumTableCell(sectionID: 2)
-                MediumTableCell(sectionID: 3)
-                SmallTableCell(sectionID: 4)
-                MediumTableCell(sectionID: 5)
-                MediumTableCell(sectionID: 6)
-                FeaturedCell(sectionID: 7)
-            }.navigationBarTitle("Apps")
+            GeometryReader { geometryProxy in
+                ScrollView(.vertical, showsIndicators: true) {
+                    Group {
+                        FeaturedCell(sectionID: 1)
+                            .modifier(ProxyModifier(proxyW: 0.99, proxyH: 1.75, proxy: geometryProxy))
+                        MediumTableCell(sectionID: 2)
+                            .modifier(ProxyModifier(proxyH: 2.25, proxy: geometryProxy))
+                        MediumTableCell(sectionID: 3)
+                        .modifier(ProxyModifier(proxyH: 2.4, proxy: geometryProxy))
+                        SmallTableCell(sectionID: 4)
+                        MediumTableCell(sectionID: 5)
+                        .modifier(ProxyModifier(proxyH: 2.4, proxy: geometryProxy))
+                        MediumTableCell(sectionID: 6)
+                        .modifier(ProxyModifier(proxyH: 2.4, proxy: geometryProxy))
+                        FeaturedCell(sectionID: 7)
+                        .modifier(ProxyModifier(proxyW: 0.99, proxyH: 1.75, proxy: geometryProxy))
+                    }
+                }.navigationBarTitle("Apps")
+            }
         }
+    }
+}
+
+struct ProxyModifier: ViewModifier {
+    var proxyW: CGFloat?
+    var proxyH: CGFloat
+    var proxy: GeometryProxy
+    func body(content: Content) -> some View {
+        return content
+            .frame(width: self.proxy.size.width / (self.proxyW ?? 1.0), height: self.proxy.size.height / self.proxyH)
     }
 }
 

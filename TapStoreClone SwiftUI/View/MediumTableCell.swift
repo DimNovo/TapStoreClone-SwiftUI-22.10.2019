@@ -16,23 +16,29 @@ struct MediumTableCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             SectionHeader(title: self.$title, subtitle: self.$subtitle)
-            ScrollView(.horizontal, showsIndicators: false) {
-                ForEach(self.secStore.sections.filter { $0.id == self.sectionID }, id: \.id) { section in
+            CustonScrollView {
+                ForEach(self.secStore.sections.filter { $0.id == self.sectionID }) { section in
                     HStack {
                         VStack {
-                            ForEach(section.items.prefix(3), id: \.id) { item in
+                            ForEach(section.items.prefix(3)) { item in
                                 MediumCell(image: item.image, name: item.name, subheading: item.subheading)
                             }
                         }
                         VStack {
-                            ForEach(section.items[3...5], id: \.id) { item in
+                            ForEach(section.items[3...5]) { item in
                                 MediumCell(image: item.image, name: item.name, subheading: item.subheading)
                             }
                         }
                         VStack {
-                            ForEach(section.items.suffix(3), id: \.id) { item in
+                            ForEach(section.items[5...7]) { item in
                                 MediumCell(image: item.image, name: item.name, subheading: item.subheading)
                             }
+                        }
+                        VStack {
+                            ForEach(section.items.suffix(2)) { item in
+                                MediumCell(image: item.image, name: item.name, subheading: item.subheading)
+                            }
+                            Spacer()
                         }
                     }.onAppear {
                         self.title = section.title
@@ -40,7 +46,7 @@ struct MediumTableCell: View {
                     }
                 }
             }
-        }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
+        }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 15))
     }
 }
 
@@ -55,11 +61,11 @@ struct MediumCell: View {
                 Image(self.image)
                     .cornerRadius(10)
                 VStack(alignment: .leading) {
-                    Text(self.name)
+                    Text(self.name.localizedCapitalized)
                         .font(.headline)
                         .foregroundColor(.primary)
                     Text(self.subheading)
-                        .font(.footnote)
+                        .font(.system(size: 14))
                         .foregroundColor(.secondary)
                 }
                 Spacer()

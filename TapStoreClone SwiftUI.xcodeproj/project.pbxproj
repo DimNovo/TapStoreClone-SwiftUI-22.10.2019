@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74795D88235F93650096AC3C /* appstore.json in Resources */ = {isa = PBXBuildFile; fileRef = 74795D87235F93650096AC3C /* appstore.json */; };
+		74630106236B390300CE0CDC /* appstore.json in Resources */ = {isa = PBXBuildFile; fileRef = 74630105236B390300CE0CDC /* appstore.json */; };
+		74630108236B3B3400CE0CDC /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74630107236B3B3400CE0CDC /* CustomScrollView.swift */; };
 		74A8A2B6235F64DD00FF2323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A8A2B5235F64DD00FF2323 /* AppDelegate.swift */; };
 		74A8A2B8235F64DD00FF2323 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A8A2B7235F64DD00FF2323 /* SceneDelegate.swift */; };
 		74A8A2BA235F64DD00FF2323 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A8A2B9235F64DD00FF2323 /* ContentView.swift */; };
@@ -25,7 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		74795D87235F93650096AC3C /* appstore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appstore.json; sourceTree = "<group>"; };
+		74630105236B390300CE0CDC /* appstore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appstore.json; sourceTree = "<group>"; };
+		74630107236B3B3400CE0CDC /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		74A8A2B2235F64DD00FF2323 /* TapStoreClone SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TapStoreClone SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A8A2B5235F64DD00FF2323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74A8A2B7235F64DD00FF2323 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				74A8A2C9235F650600FF2323 /* Bundle+Service.swift */,
+				74630107236B3B3400CE0CDC /* CustomScrollView.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -108,7 +111,7 @@
 		74A8A2CE235F657D00FF2323 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				74795D87235F93650096AC3C /* appstore.json */,
+				74630105236B390300CE0CDC /* appstore.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -203,7 +206,7 @@
 				74A8A2C2235F64DE00FF2323 /* LaunchScreen.storyboard in Resources */,
 				74A8A2BF235F64DE00FF2323 /* Preview Assets.xcassets in Resources */,
 				74A8A2BC235F64DE00FF2323 /* Assets.xcassets in Resources */,
-				74795D88235F93650096AC3C /* appstore.json in Resources */,
+				74630106236B390300CE0CDC /* appstore.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +219,7 @@
 			files = (
 				74A8A2DC235F6AF300FF2323 /* MediumTableCell.swift in Sources */,
 				74A8A2D2235F659C00FF2323 /* Model.swift in Sources */,
+				74630108236B3B3400CE0CDC /* CustomScrollView.swift in Sources */,
 				74A8A2DE235F6E5A00FF2323 /* SmallTableCell.swift in Sources */,
 				74A8A2D4235F665400FF2323 /* SectionStore.swift in Sources */,
 				74A8A2B6235F64DD00FF2323 /* AppDelegate.swift in Sources */,
