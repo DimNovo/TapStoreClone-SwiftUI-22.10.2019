@@ -20,7 +20,7 @@ struct FeaturedCell: View {
                 HStack(alignment: .center) {
                     ForEach(self.secStore.sections.filter { $0.id == self.sectionID }) {
                         section in
-                        ForEach(section.items, id: \.id) { item in
+                        ForEach(section.items) { item in
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(item.tagline.localizedUppercase)
                                     .font(.system(size: 13))
